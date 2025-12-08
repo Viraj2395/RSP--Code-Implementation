@@ -84,6 +84,22 @@ Node * DeleteAtIndex(Node* Head,int index){
 
 
 // Case 3 : Delete At the End
+Node * DeleteAtEnd(Node* Head){
+    Node* p = Head;
+    Node* q = Head->next;
+
+    while (q->next != nullptr)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    
+    p->next = nullptr;
+    free(q);
+
+
+    return Head;
+}
 
 
 void Traverse(Node * Head){
@@ -121,7 +137,9 @@ int main(){
 
     // Head = DeleteFirstNode(Head,1);
 
-    Head = DeleteAtIndex(Head, 3);
+    // Head = DeleteAtIndex(Head, 3);
+    
+    Head = DeleteAtEnd(Head);
 
     Traverse(Head);
     std::cout << std::endl;
