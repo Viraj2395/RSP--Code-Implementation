@@ -54,7 +54,7 @@ Node * insertAtEnd(Node* Head, int _data){
 }
 
 // Case 1 : Delete the First Node
-Node * DeleteFirstNose(Node* Head,int _data){
+Node * DeleteFirstNode(Node* Head,int _data){
     Node* ptr = Head;
     ptr->data = _data;
 
@@ -66,8 +66,25 @@ Node * DeleteFirstNose(Node* Head,int _data){
 }
 
 // Case 2 : Delete At the Index
+Node * DeleteAtIndex(Node* Head,int index){
+    Node* p = Head;
+    Node* q = Head->next;
+
+    for (int i = 0; i < index - 1 ; i++)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    
+    p->next = q->next;
+    free(q);
+
+    return Head;
+}
+
 
 // Case 3 : Delete At the End
+
 
 void Traverse(Node * Head){
     while (Head != nullptr)
@@ -102,7 +119,9 @@ int main(){
 
     // Head = insertAtEnd(Head, 83);
 
-    // Head = DeleteFirstNose(Head,1);
+    // Head = DeleteFirstNode(Head,1);
+
+    Head = DeleteAtIndex(Head, 3);
 
     Traverse(Head);
     std::cout << std::endl;
