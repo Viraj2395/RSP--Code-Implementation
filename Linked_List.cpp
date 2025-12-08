@@ -38,6 +38,7 @@ Node * insertInBetween(Node * Head, int _data, int index){
     return Head;
 }
 
+// Case 3 : insert At the End
 Node * insertAtEnd(Node* Head, int _data){
     Node * ptr = new Node(_data);
     Node * p = Head;
@@ -52,6 +53,21 @@ Node * insertAtEnd(Node* Head, int _data){
     return Head;
 }
 
+// Case 1 : Delete the First Node
+Node * DeleteFirstNose(Node* Head,int _data){
+    Node* ptr = Head;
+    ptr->data = _data;
+
+    Head = Head->next;
+
+    free(ptr);
+
+    return Head;
+}
+
+// Case 2 : Delete At the Index
+
+// Case 3 : Delete At the End
 
 void Traverse(Node * Head){
     while (Head != nullptr)
@@ -85,6 +101,8 @@ int main(){
     // Head= insertInBetween(Head,45,3);
 
     // Head = insertAtEnd(Head, 83);
+
+    // Head = DeleteFirstNose(Head,1);
 
     Traverse(Head);
     std::cout << std::endl;
