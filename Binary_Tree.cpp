@@ -33,14 +33,62 @@ Node* buildTree(std::vector<int> preOrder){
 } 
 
 
+// Pre-Order Traversal
+void preOrderTraversal(Node* root){
+
+    if (root == nullptr)
+    {
+        return;
+    }
+    
+    std::cout<<root->data<<" ";
+    preOrderTraversal(root->left);
+    preOrderTraversal(root->right);
+}
+
+
+void inOrderTraversal(Node* root){
+
+    if (root == nullptr)
+    {
+        return;
+    }
+    
+    inOrderTraversal(root->left);
+    std::cout<<root->data<<" ";
+    inOrderTraversal(root->right);
+}
+
+
+void postOrderTraversal(Node* root){
+
+    if (root == nullptr)
+    {
+        return;
+    }
+    
+    postOrderTraversal(root->left);
+    postOrderTraversal(root->right);
+    std::cout<<root->data<<" ";
+}
+
+
+
 int main(){
     std::vector<int> preOrder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
     Node* root = buildTree(preOrder);
-    std::cout<<root->data<<std::endl;
-    std::cout<<root->left->data<<std::endl;
-    std::cout<<root->right->data<<std::endl;
 
+
+    preOrderTraversal(root);
+
+    std::cout<<std::endl;
+    
+    inOrderTraversal(root);
+    
+    std::cout<<std::endl;
+
+    postOrderTraversal(root);
 
     return 0;
 }
