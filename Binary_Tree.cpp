@@ -104,6 +104,13 @@ void levelOrderTraversal(Node* root) {
 int main(){
     std::vector<int> preOrder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
 
+    //     1
+    //    / \
+    //   2   3
+    //      / \
+    //     4   5
+
+
     Node* root = buildTree(preOrder);
 
     std::cout<<"Pre-Order Traversal : ";
