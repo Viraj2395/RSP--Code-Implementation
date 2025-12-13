@@ -46,7 +46,7 @@ void preOrderTraversal(Node* root){
     preOrderTraversal(root->right);
 }
 
-
+// In - Order Traversal
 void inOrderTraversal(Node* root){
 
     if (root == nullptr)
@@ -59,7 +59,7 @@ void inOrderTraversal(Node* root){
     inOrderTraversal(root->right);
 }
 
-
+// Post - Order Traversel
 void postOrderTraversal(Node* root){
 
     if (root == nullptr)
@@ -79,15 +79,17 @@ int main(){
 
     Node* root = buildTree(preOrder);
 
-
+    std::cout<<"Pre-Order Traversal : ";
     preOrderTraversal(root);
-
+    
     std::cout<<std::endl;
     
+    std::cout<<"In-Order Traversal : ";
     inOrderTraversal(root);
     
     std::cout<<std::endl;
-
+    
+    std::cout<<"Post-Order Traversal : ";
     postOrderTraversal(root);
 
     return 0;
