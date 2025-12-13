@@ -54,15 +54,12 @@ Node * insertAtEnd(Node* Head, int _data){
 }
 
 // Case 1 : Delete the First Node
-Node * DeleteFirstNode(Node* Head,int _data){
-    Node* ptr = Head;
-    ptr->data = _data;
+Node * DeleteFirstNode(Node* Head){
+    Node* ptr = Head->next;
 
-    Head = Head->next;
+    free(Head);
 
-    free(ptr);
-
-    return Head;
+    return ptr;
 }
 
 // Case 2 : Delete At the Index

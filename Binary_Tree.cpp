@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 class Node{
     public:
@@ -72,6 +73,31 @@ void postOrderTraversal(Node* root){
     std::cout<<root->data<<" ";
 }
 
+// Level-Order- Traversal
+void levelOrderTraversal(Node* root) {
+    if (root == nullptr) {
+        return;
+    }
+
+    std::queue<Node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        Node* curr = q.front();
+        q.pop();
+
+        std::cout << curr->data << " ";
+
+        if (curr->left != nullptr) {
+            q.push(curr->left);
+        }
+
+        if (curr->right != nullptr) {
+            q.push(curr->right);
+        }
+    }
+}
+
 
 
 int main(){
@@ -91,6 +117,12 @@ int main(){
     
     std::cout<<"Post-Order Traversal : ";
     postOrderTraversal(root);
+
+
+    std::cout<<std::endl;
+
+    std::cout<<"Level-Order Traversal : ";
+    levelOrderTraversal(root);
 
     return 0;
 }
