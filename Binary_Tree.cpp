@@ -2,12 +2,14 @@
 #include <vector>
 #include <queue>
 
+
 class Node{
     public:
         int data;
         Node* left;
         Node* right;
 
+    // Constructor to initialize node
     Node(int key){
         data = key;
         left = nullptr;
@@ -18,6 +20,7 @@ class Node{
 
 static int idx = -1;
 
+// Contructing Tree
 Node* buildTree(std::vector<int> preOrder){
     idx++;
 
@@ -97,8 +100,6 @@ void levelOrderTraversal(Node* root) {
         }
     }
 }
-
-
 
 int main(){
     std::vector<int> preOrder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
