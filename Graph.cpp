@@ -3,21 +3,23 @@
 #include <vector>
 #include <queue>
 
+// This Graph is an UNDIRECTED graph using adjacency list representation.
 class Graph{
     int v;
     std::list<int> *l;
-
     public:
-        Graph(int _v){
+    
+    Graph(int _v){
             v = _v;
+            // Create an array of lists, size = v
             l = new std::list<int>[v];
         }
-
+        // Add an undirected edge between u and v
         void addEdge(int u,int v){
             l[u].push_back(v);
             l[v].push_back(u);
         }
-
+        // Print adjacency list
         void printAdjList(){
             for (int i = 0; i < v; i++)
             {
@@ -30,7 +32,8 @@ class Graph{
             }
             
         }
-
+        // Uses Queue
+        // Visits nodes level-by-level (like tree level order)
         void BFS(){
             std::queue<int> Q;
             std::vector<bool> vis(v,false);
@@ -55,7 +58,7 @@ class Graph{
             }
             std::cout<<"\n";
         }
-
+        // Performs Depth First Search using recursion
         void dfsHelper(int u, std::vector<bool> &vis){
             std::cout<<u<<" ";
             vis[u] = true;
@@ -70,7 +73,7 @@ class Graph{
             }
             
         }
-
+        // Calls helper function starting from source node
         void DFS(){
             int src = 0;
             std::vector<bool> vis(v,false);
