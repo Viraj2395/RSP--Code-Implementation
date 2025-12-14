@@ -49,6 +49,11 @@ void preOrderTraversal(Node* root){
     preOrderTraversal(root->left);
     preOrderTraversal(root->right);
 }
+    //     -1
+    //     /  \
+    //   -2   -3
+    //        /  \
+    //      -4   -5
 
 // In - Order Traversal
 void inOrderTraversal(Node* root){
@@ -62,6 +67,12 @@ void inOrderTraversal(Node* root){
     std::cout<<root->data<<" ";
     inOrderTraversal(root->right);
 }
+    //      1
+    //     /| \
+    //    2    3
+    //    |   /| \
+    //       4    5
+    //       |    |
 
 // Post - Order Traversel
 void postOrderTraversal(Node* root){
@@ -75,6 +86,11 @@ void postOrderTraversal(Node* root){
     postOrderTraversal(root->right);
     std::cout<<root->data<<" ";
 }
+    //      1-
+    //     /  \
+    //    2-    3-
+    //        /  \
+    //       4-    5-
 
 // Level-Order- Traversal
 void levelOrderTraversal(Node* root) {
@@ -100,6 +116,11 @@ void levelOrderTraversal(Node* root) {
         }
     }
 }
+    //      1
+    //     /  \
+    //    2    3
+    //        /  \
+    //       4    5
 
 int main(){
     std::vector<int> preOrder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
