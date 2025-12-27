@@ -19,6 +19,11 @@ Node * insertAtFirst(Node * Head , int _data){
 
     return ptr;
 }
+// You could use a reference to a pointer, like `Node*&Head`, 
+// if you wanted to modify the head pointer itself within the function. 
+// However, the current function takes a `Node*` `Head` and returns a new `Node*`,
+//  which also works for inserting at the beginning.
+
 
 //Case 2 : insert in Between
 Node * insertInBetween(Node * Head, int _data, int index){
